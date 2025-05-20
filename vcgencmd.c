@@ -60,6 +60,9 @@ bool read_temp()
 
     _mbox_close(mb);
 
+//    float val;
+//    sscanf(_result, "%f", &val);
+
     printf("%s", _result);
 
     return ret;

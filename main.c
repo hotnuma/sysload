@@ -41,11 +41,13 @@ int main(int argc, char **argv)
 
     setbuf(stdout, NULL);
 
-    GpuData gpudata = {0};
-
     long cpucount = 1;
-
     cpucount = sysconf(_SC_NPROCESSORS_ONLN);
+
+    bool opt_withgpu = true;
+    bool opt_withtemp = read_temp();
+
+    GpuData gpudata = {0};
 
     cpuload(cpucount, false);
     gpuload(&gpudata, false);
@@ -56,13 +58,17 @@ int main(int argc, char **argv)
 
         cpuload(cpucount, true);
 
-        printf("%s", COLSEP);
+        if (opt_withgpu)
+        {
+            printf("%s", COLSEP);
+            gpuload(&gpudata, true);
+        }
 
-        gpuload(&gpudata, true);
-
-        printf("%s", COLSEP);
-
-        read_temp();
+        if (opt_withtemp)
+        {
+            printf("%s", COLSEP);
+            read_temp();
+        }
 
         printf("\n");
     }
