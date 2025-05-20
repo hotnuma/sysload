@@ -22,6 +22,8 @@ SOURCES = \
     vcgencmd.c
 
 DISTFILES = \
+    License.txt \
+    Readme.md \
     install.sh \
     meson.build \
 

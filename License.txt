@@ -1,0 +1,21 @@
+
+* xfce4-systemload-plugin :
+
+    https://gitlab.xfce.org/panel-plugins/xfce4-systemload-plugin/-/blob/master/COPYING?ref_type=heads
+    Copyright (c) 2003 Riccardo Persichetti
+    Copyright (c) 2010 Florian Rivoal
+    License: BSD 2-Clause "Simplified" License
+
+* wfplug-gpu :
+
+    https://github.com/raspberrypi-ui/wfplug-gpu/blob/master/debian/copyright
+    Copyright: 2025 Raspberry Pi Holdings Ltd.
+    License: BSD-3-Clause
+
+* vcgencmd :
+
+    https://github.com/raspberrypi/utils/blob/master/LICENCE
+    Copyright (c) 2023, Raspberry Pi Ltd.
+    License: BSD-3-Clause
+
+
