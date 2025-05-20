@@ -1,5 +1,6 @@
 #include "cpuload.h"
 #include "gpuload.h"
+#include "vcgencmd.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -58,6 +59,10 @@ int main(int argc, char **argv)
         printf("%s", COLSEP);
 
         gpuload(&gpudata, true);
+
+        printf("%s", COLSEP);
+
+        read_temp();
 
         printf("\n");
     }

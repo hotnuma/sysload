@@ -11,13 +11,15 @@ PKGCONFIG =
 
 HEADERS = \
     cpuload.h \
-    gpuload.h
+    gpuload.h \
+    vcgencmd.h
 
 SOURCES = \
     _0temp.c \
     cpuload.c \
     gpuload.c \
-    main.c
+    main.c \
+    vcgencmd.c
 
 DISTFILES = \
     install.sh \

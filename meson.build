@@ -23,6 +23,7 @@ app_sources = [
     'cpuload.c',
     'gpuload.c',
     'main.c',
+    'vcgencmd.c',
 ]
 
 executable(
