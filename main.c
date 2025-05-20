@@ -44,13 +44,12 @@ int main(int argc, char **argv)
     long cpucount = 1;
     cpucount = sysconf(_SC_NPROCESSORS_ONLN);
 
-    bool opt_withgpu = true;
-    bool opt_withtemp = read_temp(false);
+    cpuload(cpucount, false);
 
     GpuData gpudata = {0};
 
-    cpuload(cpucount, false);
-    gpuload(&gpudata, false);
+    bool opt_withgpu = gpuload(&gpudata, false);
+    bool opt_withtemp = read_temp(false);
 
     while (1)
     {

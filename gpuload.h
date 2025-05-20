@@ -34,6 +34,6 @@ typedef struct
 
 } GpuData;
 
-float gpuload(GpuData *gpudata, bool output);
+bool gpuload(GpuData *gpudata, bool output);
 
 

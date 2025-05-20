@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 static float _gpu_get_usage_new(GpuData *gpudata);
 static float _gpu_get_usage(GpuData *gpudata);
 
-float gpuload(GpuData *gpudata, bool output)
+bool gpuload(GpuData *gpudata, bool output)
 {
     float gpuval;
 
@@ -44,12 +44,15 @@ float gpuload(GpuData *gpudata, bool output)
     if (gpuval < 0.0)
         gpuval = _gpu_get_usage(gpudata);
 
+    if (gpuval < 0.0)
+        return false;
+
     gpuval *= 100;
 
     if (output)
         printf("%.2f", gpuval);
 
-    return gpuval;
+    return true;
 }
 
 static float _gpu_get_usage_new(GpuData *gpudata)
@@ -160,7 +163,7 @@ static float _gpu_get_usage(GpuData *gpudata)
         fp = fopen("/sys/kernel/debug/dri/1/gpu_usage", "rb");
 
     if (fp == NULL)
-        return 0.0;
+        return -1.0;
 
     // read the stats file a line at a time
     while (getline(&buf, &res, fp) > 0)
