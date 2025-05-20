@@ -48,7 +48,7 @@ static unsigned _gencmd(int file_desc,
                         const char *command, char *result, int result_len);
 static int _mbox_property(int file_desc, void *buf);
 
-bool read_temp()
+bool read_temp(bool output)
 {
     int mb = _mbox_open();
     if (mb < 0)
@@ -59,13 +59,18 @@ bool read_temp()
         return false;
 
     _mbox_close(mb);
+    
+    if (output)
+    {
+        //printf("%s\t", _result);
+        
+        float val;
+        sscanf(_result, "temp=%f'C", &val);
 
-//    float val;
-//    sscanf(_result, "%f", &val);
+        printf("%.2f", val);
+    }
 
-    printf("%s", _result);
-
-    return ret;
+    return true;
 }
 
 static int _mbox_open()
@@ -88,7 +93,7 @@ static void _mbox_close(int file_desc)
 #define GET_GENCMD_RESULT 0x00030080
 
 static unsigned _gencmd(int file_desc,
-                       const char *command, char *result, int result_len)
+                        const char *command, char *result, int result_len)
 {
     int i = 0;
     unsigned p[(MAX_STRING >> 2) + 7];

@@ -45,7 +45,7 @@ int main(int argc, char **argv)
     cpucount = sysconf(_SC_NPROCESSORS_ONLN);
 
     bool opt_withgpu = true;
-    bool opt_withtemp = read_temp();
+    bool opt_withtemp = read_temp(false);
 
     GpuData gpudata = {0};
 
@@ -67,7 +67,7 @@ int main(int argc, char **argv)
         if (opt_withtemp)
         {
             printf("%s", COLSEP);
-            read_temp();
+            read_temp(true);
         }
 
         printf("\n");
