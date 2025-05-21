@@ -42,7 +42,10 @@ int main(int argc, char **argv)
     setbuf(stdout, NULL);
 
     long cpucount = 1;
-    cpucount = sysconf(_SC_NPROCESSORS_ONLN);
+    bool opt_cores = false;
+
+    if (opt_cores)
+        cpucount = sysconf(_SC_NPROCESSORS_ONLN);
 
     cpuload(cpucount, false);
 

@@ -39,15 +39,20 @@ static void _cpu_readline(char *line, int numcpu, bool output);
 
 bool cpuload(int numcpu, bool output)
 {
+    bool ret = false;
+
     FILE *fd = fopen(PROC_STAT, "r");
     if (!fd)
-        return false;
+        return ret;
 
     char *line = NULL;
     size_t len;
 
+    // get first line for global cpu usage
     if (getline(&line, &len, fd) <= 0)
-        return false;
+        goto out;
+
+    ret = true;
 
     if (numcpu == 1)
     {
@@ -57,6 +62,7 @@ bool cpuload(int numcpu, bool output)
     {
         int i = 0;
 
+        // get cpu lines for detailed core usage
         while (getline(&line, &len, fd) != -1)
         {
             if (strncmp(line, "cpu", 3) != 0)
@@ -68,12 +74,14 @@ bool cpuload(int numcpu, bool output)
         }
     }
 
+out:
+
     fclose(fd);
 
     if (line)
         free(line);
 
-    return true;
+    return ret;
 }
 
 static void _cpu_readline(char *line, int numcpu, bool output)
