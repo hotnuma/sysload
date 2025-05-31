@@ -17,13 +17,10 @@ bool gettemp_v2(bool output)
     {
         _tempbuff[5] = '\0';
         val = (float) atoi(_tempbuff) / (float) 1000.0;
-
-        if (output)
-        {
-            printf("%s", COLSEP);
-            printf("%.2f", val);
-        }
     }
+
+    if (output)
+        printf("%.2f", val);
 
     fclose(fd);
 

@@ -10,7 +10,7 @@
 #include <time.h>
 #include <string.h>
 
-#define gettemp gettemp_v1
+#define gettemp gettemp_v2
 
 int msleep(long msec)
 {
