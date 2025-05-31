@@ -30,7 +30,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <stdbool.h>
 
-bool read_temp(bool output);
+bool gettemp_v1(bool output);
 
 #endif // VCGENCMD_H
 

@@ -1,5 +1,6 @@
 #include "cpuload.h"
 #include "gpuload.h"
+#include "gettemp.h"
 #include "vcgencmd.h"
 
 #include <stdlib.h>
@@ -8,6 +9,8 @@
 #include <errno.h>
 #include <time.h>
 #include <string.h>
+
+#define gettemp gettemp_v1
 
 int msleep(long msec)
 {
@@ -52,7 +55,7 @@ int main(int argc, char **argv)
     GpuData gpudata = {0};
 
     bool opt_withgpu = gpuload(&gpudata, false);
-    bool opt_withtemp = read_temp(false);
+    bool opt_withtemp = gettemp(false);
 
     while (1)
     {
@@ -69,7 +72,7 @@ int main(int argc, char **argv)
         if (opt_withtemp)
         {
             printf("%s", COLSEP);
-            read_temp(true);
+            gettemp(true);
         }
 
         printf("\n");

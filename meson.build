@@ -23,6 +23,7 @@ app_sources = [
     'cpuload.c',
     'gpuload.c',
     'main.c',
+    'gettemp.c',
     'vcgencmd.c',
 ]
 

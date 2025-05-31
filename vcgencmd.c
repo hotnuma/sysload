@@ -48,7 +48,7 @@ static unsigned _gencmd(int file_desc,
                         const char *command, char *result, int result_len);
 static int _mbox_property(int file_desc, void *buf);
 
-bool read_temp(bool output)
+bool gettemp_v1(bool output)
 {
     int mb = _mbox_open();
     if (mb < 0)
