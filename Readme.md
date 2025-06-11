@@ -1,9 +1,8 @@
 
-A simple cpu / gpu / temperature command line tool forked from xfce4 panel-plugins, wfplug-gpu and vcgencmd :
+A simple cpu / gpu / temperature command line tool forked from xfce4 panel-plugins and wfplug-gpu :
 
 [https://gitlab.xfce.org/panel-plugins/](https://gitlab.xfce.org/panel-plugins/xfce4-systemload-plugin/-/blob/master/panel-plugin/cpu.cc?ref_type=heads)  
 [https://github.com/raspberrypi-ui/wfplug-gpu/](https://github.com/raspberrypi-ui/wfplug-gpu/blob/master/src/gpu.c)  
-[https://github.com/raspberrypi/utils/](https://github.com/raspberrypi/utils/blob/master/vcgencmd/vcgencmd.c)  
 
 Thanks to the original authors.
 

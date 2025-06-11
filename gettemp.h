@@ -3,7 +3,7 @@
 
 #include "cpuload.h"
 
-bool gettemp_v2(bool output);
+bool gettemp(bool output);
 
 #endif // GETTEMP_H
 

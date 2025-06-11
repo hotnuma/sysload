@@ -12,10 +12,4 @@
     Copyright: 2025 Raspberry Pi Holdings Ltd.
     License: BSD-3-Clause
 
-* vcgencmd :
-
-    https://github.com/raspberrypi/utils/blob/master/LICENCE
-    Copyright (c) 2023, Raspberry Pi Ltd.
-    License: BSD-3-Clause
-
 

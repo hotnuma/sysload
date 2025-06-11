@@ -1,7 +1,6 @@
 #include "cpuload.h"
 #include "gpuload.h"
 #include "gettemp.h"
-#include "vcgencmd.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -9,8 +8,6 @@
 #include <errno.h>
 #include <time.h>
 #include <string.h>
-
-#define gettemp gettemp_v2
 
 int msleep(long msec)
 {

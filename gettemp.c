@@ -5,7 +5,7 @@
 #define CPU_TEMP "/sys/devices/virtual/thermal/thermal_zone0/temp"
 char _tempbuff[6];
 
-bool gettemp_v2(bool output)
+bool gettemp(bool output)
 {
     FILE *fd = fopen(CPU_TEMP, "r");
     if (!fd)
