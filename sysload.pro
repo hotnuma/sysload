@@ -13,7 +13,6 @@ HEADERS = \
     cpuload.h \
     gettemp.h \
     gpuload.h \
-    vcgencmd.h
 
 SOURCES = \
     _0temp.c \
@@ -21,7 +20,6 @@ SOURCES = \
     gettemp.c \
     gpuload.c \
     main.c \
-    vcgencmd.c
 
 DISTFILES = \
     License.txt \
